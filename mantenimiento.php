@@ -65,5 +65,76 @@
     $(".span6").val(""); 
     console.log("limpiar");
     $("#gritter-notice-wrapper").show(); 
+    CargarAjax('contenido','mantenimiento.php', '', 'GET');
   }
 </script>
+
+
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Granja registrada</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                
+
+                <tr>
+
+                <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Direccion</th>
+                  <th>Accion</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                          <?php
+        $sql="select  from lote ";
+          $db = new PDO('mysql:host=localhost;dbname=c.a.c;charset=utf8mb4', 'root', 'Jose0424');
+
+        $query = $db->query($sql);
+        
+        foreach($db->query('SELECT * FROM granja') as $row) 
+        {
+
+        
+?>
+                                 
+
+             <tr class="odd gradeX">
+
+
+                  <td class="center">  <?php echo $row['id_granja'] ; ?> </td>
+                  <td class="center">  <?php echo $row['nombre'] ; ?> </td>
+                  <td class="center"> <?php echo $row['direccion'] ; ?> </td>
+
+                    <?php 
+                    if($row['estado']=="a"){
+                          $estado="i";
+                          $clase = "btn-danger";
+                           $status ="Activar";
+                      }else{
+                          $estado ="a";
+                          $clase = "btn-success";
+                          $status ="Desactivar";
+                        } ?>
+                  <td><a href="#" class="btn <?php echo $clase;?>" onclick="CAjax('actualizar_granja.php','id_granja=<?php echo $row['id_granja'];?>&estado=<?php echo $estado;?>','GET');">X</a> <?php echo $status;?></td>
+                </tr>
+              
+
+                <?php
+
+         }
+            ?>
+               
+               
+              </tbody>
+            </table>
+          </div>
+        
+       
