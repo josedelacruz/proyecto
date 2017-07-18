@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+  ............
+=======
 
+>>>>>>> parent of 929df43... modificad
   <div id="content-header">
     <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Inicio</a></div>
   </div>
