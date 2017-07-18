@@ -102,3 +102,63 @@
     $("#gritter-notice-wrapper").show(); 
   }
 </script>
+
+ <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Granja registrada</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                
+
+                <tr>
+
+                <th>ID</th>
+                  <th>Hembras</th>
+                  <th>Machos</th>
+                 
+                  
+                </tr>
+              </thead>
+              <tbody>
+                          <?php
+        $sql="select  from lote ";
+          $db = new PDO('mysql:host=localhost;dbname=c.a.c;charset=utf8mb4', 'root', 'Jose0424');
+
+        $query = $db->query($sql);
+        
+        foreach($db->query('SELECT sum(cantidad_h) as totalh , sum(cantidad_m) as totalm, id_lote FROM nave group by id_lote') as $row) 
+        {
+
+        
+?>
+                                 
+
+             <tr class="odd gradeX">
+
+
+                  <td class="center">  <?php echo $row['id_lote'] ; ?> </td>
+                  <td class="center">  <?php echo $row['totalh'] ; ?> </td>
+                  <td class="center">  <?php echo $row['totalm'] ; ?> </td>
+
+
+
+              
+                </tr>
+              
+
+                <?php
+
+         }
+            ?>
+               
+               
+              </tbody>
+            </table>
+          </div>
+        

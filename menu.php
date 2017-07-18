@@ -24,29 +24,6 @@
 
 
 
-<script src="js/excanvas.min.js"></script> 
-<script src="js/jquery.min.js"></script> 
-<script src="js/jquery.ui.custom.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.flot.min.js"></script> 
-<script src="js/jquery.flot.resize.min.js"></script> 
-<script src="js/jquery.peity.min.js"></script> 
-<script src="js/fullcalendar.min.js"></script> 
-<script src="js/matrix.js"></script> 
-<script src="js/matrix.dashboard.js"></script> 
-<script src="js/jquery.gritter.mi.js"></script> 
-<script src="js/matrix.ninterface.js"></script> 
-<script src="js/matrix.chat.js"></script> 
-<script src="js/jquery.validate.js"></script> 
-<script src="js/matrix.form_validation.js"></script> 
-<script src="js/jquery.wizard.js"></script> 
-<script src="js/jquery.uniform.js"></script> 
-<script src="js/select2.min.js"></script> 
-<script src="js/matrix.popover.js"></script> 
-<script src="js/jquery.dataTables.min.js"></script> 
-
-<script src="js/matrix.tables.js"></script> 
-<script type="text/javascript" src="libreriagooglechart.js"></script>
 <body>
 
 
@@ -135,5 +112,22 @@ CargarAjax('contenido','graficasL.php', '', 'GET');
 </script>
 <?php } ?>
 
-
+<script src="js/jquery.min.js"></script> 
+<script src="js/jquery.ui.custom.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/bootstrap-colorpicker.js"></script> 
+<script src="js/bootstrap-datepicker.js"></script> 
+<script src="js/jquery.toggle.buttons.js"></script> 
+<script src="js/masked.js"></script> 
+<script src="js/jquery.uniform.js"></script> 
+<script src="js/select2.min.js"></script> 
+<script src="js/matrix.js"></script> 
+<script src="js/matrix.form_common.js"></script> 
+<script src="js/wysihtml5-0.3.0.js"></script> 
+<script src="js/jquery.peity.min.js"></script> 
+<script src="js/bootstrap-wysihtml5.js"></script> 
+<script>
+  $('.textarea_editor').wysihtml5();
+</script>
+<script type="text/javascript" src="libreriagooglechart.js"></script>
 <!--end-Footer-part-->

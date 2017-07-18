@@ -33,31 +33,52 @@
         
            
 ?>
-                  
-                   <option value="<?php  echo $row['id_lote'] ; ?> ">
+                
+             <tr class="odd gradeX">
+
+
+                  <td class="center">  <?php   echo $row1['nombre']."-"." Lote(".$row['id_lote'].") "; ?> </td>
+
+                    <?php 
+                   if($row['estado']=="i"){
+                          $estado="p";
+                          $clase = "btn-warnning";
+                           $status ="Activar";
+                           $state= "Inicio";
+                      }else if ($row['estado']=="p") {
+                        # code...
+                      
+                          $estado ="f";
+                          $clase = "btn-success";
+                          $status ="Desactivar";
+                          $state= "Produccion";
+                        }
+                        else{
+                          $estado ="f";
+                          $clase = "btn-primary";
+                          $status ="Desactivar";
+                          $state= "Finalizado";
+
+                          } ?>
+
+                  <td><a href="#" title="<?php echo $state;?>  " class="btn <?php echo $clase;?>" onclick="CAjax('pasaraproduccion.php','id_lote=<?php echo $row['id_lote'];?>&estado=<?php echo $estado;?>&fecha=<?php echo "2017-07-07" ?>','GET');">X</a> <?php echo $status;?>  
+                    
+                
+
+                  </td>
+                </tr>
+                
 
                <?php 
                   
           
-                echo $row1['nombre']."-"." Lote(".$row['id_lote'].") "; ?> 
-
-              
-
-                <?php
+            
 
          }  }
             ?>
                   </td>
-                  <td>Internet
-                    Explorer 4.0</td>
+                  <td></td>
                  
-                </tr>
-                
-                  
-                  
-                
-                 
-                  
                 </tr>
               </tbody>
             </table>

@@ -106,3 +106,61 @@
     $("#gritter-notice-wrapper").show(); 
   }
 </script>
+
+
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+            <h5>Granja registrada</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                
+
+                <tr>
+
+                <th>ID</th>
+                  <th>Fecha</th>
+                 
+                  
+                </tr>
+              </thead>
+              <tbody>
+                          <?php
+        $sql="select  from lote ";
+          $db = new PDO('mysql:host=localhost;dbname=c.a.c;charset=utf8mb4', 'root', 'Jose0424');
+
+        $query = $db->query($sql);
+        
+        foreach($db->query('SELECT * FROM lote') as $row) 
+        {
+
+        
+?>
+                                 
+
+             <tr class="odd gradeX">
+
+
+                  <td class="center">  <?php echo $row['id_granja'] ; ?> </td>
+                  <td class="center">  <?php echo $row['fecha_inicioC'] ; ?> </td>
+          
+
+              
+                </tr>
+              
+
+                <?php
+
+         }
+            ?>
+               
+               
+              </tbody>
+            </table>
+          </div>
+        
