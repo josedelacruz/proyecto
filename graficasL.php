@@ -1,6 +1,6 @@
 
-<?php  
 
+<?php  
 include("conectar.php");
 $con = conectar();
 // foreach($con->query("SELECT * FROM granjas")as $row) {
